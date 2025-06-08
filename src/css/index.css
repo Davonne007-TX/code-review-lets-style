@@ -25,11 +25,14 @@
   --font-marker: "Permanent Marker", cursive;
 }
 body {
-  background-color: white;
-  display: grid;
+  display: flex;
+  width: 100%;
+  margin: 0;
   place-content: center;
-  /* min-height: 100vh;
-  font-family: Rubik; */
+  background-image: url("/images/backgroundImage.png");
+
+  background-size: contain;
+  min-height: 100vh;
 }
 
 button {
@@ -37,7 +40,7 @@ button {
   border: none;
   display: inline-flex;
   gap: 0.5em;
-  font: inherit;
+  /* font: inherit; */
   cursor: pointer;
 }
 

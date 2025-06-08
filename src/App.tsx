@@ -138,7 +138,7 @@ function App() {
   }, data.comments);
 
   return (
-    <div className="App">
+    <div className="">
       <CommentStateContext.Provider
         value={{
           comments,
