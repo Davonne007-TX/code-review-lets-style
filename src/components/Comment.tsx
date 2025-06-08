@@ -1,27 +1,22 @@
-import Reply from "./Reply"
-import Card from './Card'
+import Reply from "./Reply";
+import Card from "./Card";
 
-import type { UserComment } from "../App"
+import type { UserComment } from "../App";
 
-function Comment(props: {
-    comment: UserComment
-}) {
-    return (
-        <div className="comment-wrapper">
-            <Card item={props.comment}>
-                <p>{props.comment.content}</p>
-            </Card>
+function Comment(props: { comment: UserComment }) {
+  return (
+    <div className="comment-wrapper font-thin font-serif text-xl">
+      <Card item={props.comment}>
+        <p>{props.comment.content}</p>
+      </Card>
 
-            <div className="replies-list">
-                {props.comment.replies.map(reply => (
-                    <Reply
-                        reply={reply}
-                        key={reply.id}
-                    />
-                ))}
-            </div>
-        </div>
-    )
+      <div className="replies-list">
+        {props.comment.replies.map((reply) => (
+          <Reply reply={reply} key={reply.id} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default Comment
+export default Comment;

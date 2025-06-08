@@ -1,34 +1,43 @@
-import data from '../data.json'
+import data from "../data.json";
 
 function FormComponent(props: {
-    defaultValue?: string
-    dispatchHandler: Function
+  defaultValue?: string;
+  dispatchHandler: Function;
 }) {
-    const handleSubmit: React.FormEventHandler = e => {
-        e.preventDefault()
-        
-        const formElement = e.target as HTMLFormElement
-        const formData = new FormData(formElement)
+  const handleSubmit: React.FormEventHandler = (e) => {
+    e.preventDefault();
 
-        props.dispatchHandler(formData.get('comment') as string)
+    const formElement = e.target as HTMLFormElement;
+    const formData = new FormData(formElement);
 
-        formElement.reset()
-    }
+    props.dispatchHandler(formData.get("comment") as string);
 
-    return (
-        <div className="form-component">
-            <div className="current-user">
-                <div className="user-img">
-                    <img src={data.currentUser.image.png} alt="" />
-                </div>
-            </div>
+    formElement.reset();
+  };
 
-            <form action="#" onSubmit={handleSubmit}>
-                <textarea name="comment" id="comment" defaultValue={props.defaultValue} placeholder="Add a comment..."></textarea>
-                <button>Send</button>
-            </form>
+  return (
+    <div className="form-component">
+      <div className="current-user">
+        <div className="user-img">
+          <img
+            src={data.currentUser.image.png}
+            alt=""
+            className="w-10 rounded-2xl"
+          />
         </div>
-    )
+      </div>
+
+      <form action="#" onSubmit={handleSubmit}>
+        <textarea
+          name="comment"
+          id="comment"
+          defaultValue={props.defaultValue}
+          placeholder="Add a comment..."
+        ></textarea>
+        <button>Send</button>
+      </form>
+    </div>
+  );
 }
 
-export default FormComponent
+export default FormComponent;

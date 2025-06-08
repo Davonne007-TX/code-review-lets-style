@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-
+@import "tailwindcss";
 :root {
   /* primary colors */
   --primary-purple-600: hsl(238, 40%, 52%);
@@ -21,12 +21,15 @@
   --rounded-corners: 0.5em;
 }
 
+@theme {
+  --font-marker: "Permanent Marker", cursive;
+}
 body {
   background-color: white;
   display: grid;
   place-content: center;
-  min-height: 100vh;
-  font-family: Rubik;
+  /* min-height: 100vh;
+  font-family: Rubik; */
 }
 
 button {
@@ -36,11 +39,6 @@ button {
   gap: 0.5em;
   font: inherit;
   cursor: pointer;
-}
-
-.App {
-  width: 768px;
-  max-width: 100%;
 }
 
 /* Comment Component */
