@@ -7,6 +7,7 @@ import data from "../src/data.json";
 export type UserComment = {
   id: number;
   createdAt: string;
+  date: string;
   score: number;
   content: string;
   user: {
