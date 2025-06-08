@@ -6,7 +6,7 @@ function CommentsList() {
   const { comments } = React.useContext(CommentStateContext);
 
   return (
-    <div className="comments-list flex flex-col max-w-4xl p-4 bg-blue-300">
+    <div className="comments-list flex flex-col max-w-5xl p-4 bg-blue-300">
       {comments.map((comment) => (
         <Comment comment={comment} key={comment.id} />
       ))}

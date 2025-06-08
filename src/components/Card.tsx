@@ -40,10 +40,11 @@ function Card(props: {
   return (
     <div className="container outline-2 outline-white">
       <div className="card">
-        {/* <ScoreComponent score={props.item.score} /> */}
+        {/* {/* <ScoreComponent score={props.item.score} /> //this is here twice? */}
 
         <div className="content flex flex-col md:flex-row gap-2">
           <ProfileHeader {...createProps(props.item)}>
+            {/* <ScoreComponent score={props.item.score} /> */}
             {/* {!isCurrentUser && (
               <Button
                 clickHandler={(e) => setIsReplying((prev) => !prev)}
@@ -61,7 +62,7 @@ function Card(props: {
               />
             )}
           </ProfileHeader>
-          <ScoreComponent score={props.item.score} />
+          {/* <ScoreComponent score={props.item.score} /> */}
 
           {props.children}
         </div>

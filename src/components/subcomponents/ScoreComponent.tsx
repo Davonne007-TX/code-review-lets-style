@@ -1,23 +1,21 @@
-function ScoreComponent(props: {
-    score: number
-}) {
-    return (
-        <div className="score-component">
-            <button>
-                <div className="icon-img">
-                    <img src="/images/icon-plus.svg" alt="" />
-                </div>
-            </button>
-
-            <span>{props.score}</span>
-
-            <button>
-                <div className="icon-img">
-                    <img src="/images/icon-minus.svg" alt="" />
-                </div>
-            </button>
+function ScoreComponent(props: { score: number }) {
+  return (
+    <div className="score-component flex gap-1">
+      <button>
+        <div className="icon-img">
+          <p>➕</p>
         </div>
-    )
+      </button>
+
+      <span>{props.score}</span>
+
+      <button>
+        <div className="icon-img">
+          <p>➖</p>
+        </div>
+      </button>
+    </div>
+  );
 }
 
-export default ScoreComponent
+export default ScoreComponent;
