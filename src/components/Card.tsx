@@ -38,19 +38,19 @@ function Card(props: {
   const isCurrentUser = currentUser.username == props.item.user.username;
 
   return (
-    <div className="container outline-2 outline-white p-1">
+    <div className="container outline-2 outline-white">
       <div className="card">
         {/* <ScoreComponent score={props.item.score} /> */}
 
-        <div className="content flex gap-2">
+        <div className="content flex flex-col md:flex-row gap-2">
           <ProfileHeader {...createProps(props.item)}>
-            {!isCurrentUser && (
+            {/* {!isCurrentUser && (
               <Button
                 clickHandler={(e) => setIsReplying((prev) => !prev)}
                 iconImage="/images/icon-reply.svg"
                 label="Reply"
               />
-            )}
+            )} */}
 
             {isCurrentUser && (
               <CurrentUserActions
