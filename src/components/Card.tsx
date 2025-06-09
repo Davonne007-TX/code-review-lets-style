@@ -2,7 +2,7 @@ import * as React from "react";
 
 import ProfileHeader from "./subcomponents/ProfileHeader";
 import FormComponent from "./FormComponent";
-import ScoreComponent from "./subcomponents/ScoreComponent";
+// import ScoreComponent from "./subcomponents/ScoreComponent";
 import Button from "./subcomponents/Button";
 import { CommentStateContext, currentUser, createProps } from "../App";
 
@@ -40,18 +40,16 @@ function Card(props: {
   return (
     <div className="container outline-2 outline-white">
       <div className="card">
-        {/* {/* <ScoreComponent score={props.item.score} /> //this is here twice? */}
-
-        <div className="content flex flex-col md:flex-row gap-2">
+        <div className="content flex flex-col md:flex-row gap-2 bg-blue-500">
           <ProfileHeader {...createProps(props.item)}>
             {/* <ScoreComponent score={props.item.score} /> */}
-            {/* {!isCurrentUser && (
+            {!isCurrentUser && (
               <Button
                 clickHandler={(e) => setIsReplying((prev) => !prev)}
                 iconImage="/images/icon-reply.svg"
                 label="Reply"
               />
-            )} */}
+            )}
 
             {isCurrentUser && (
               <CurrentUserActions
@@ -101,5 +99,3 @@ function Card(props: {
 }
 
 export default Card;
-
-// gotta move the reply button

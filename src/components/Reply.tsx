@@ -5,10 +5,12 @@ function Reply({ reply }: { reply: UserReply }) {
   return (
     <div className="reply-wrapper">
       <Card item={reply}>
-        <p className="mt-2">
-          <span className="replying-to">@{reply.replyingTo} </span>
-          {reply.content}
-        </p>
+        <div className=" bg-blue-300">
+          <p className="mt-2 p-2">
+            <span className="replying-to">@{reply.replyingTo} </span>
+            {reply.content}
+          </p>
+        </div>
       </Card>
     </div>
   );

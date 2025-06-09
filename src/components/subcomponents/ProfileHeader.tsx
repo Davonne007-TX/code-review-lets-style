@@ -19,23 +19,22 @@ function ProfileHeader(props: {
           <img
             src={props.avatar}
             alt="User avatar"
-            className="lg:w-32 rounded-2xl"
+            className="lg:w-20 rounded-2xl"
           />
         </div>
 
         {/* Text Info */}
-        <div className="user-info flex items-center gap-2 flex-wrap max-w-sm">
+        <div className="user-info flex items-center gap-2 flex-wrap max-w-sm bg-blue-500">
           <h3 className="font-semibold font-marker text-xl text-center">
             {props.username}
           </h3>
           <Online />
-
           {isCurrentUser && (
             <span className="current-user bg-blue-100 text-blue-600 text-2xl font-semibold px-2 py-1 rounded">
-              you
+              Reply Guy!
             </span>
-          )}
-          {/* <span className="comment-date text-black text-md">{props.date}</span> */}
+          )}{" "}
+          <span className="comment-date text-black text-md">{props.date}</span>
         </div>
       </div>
 
