@@ -12,29 +12,29 @@ function ProfileHeader(props: {
   return (
     <div className="profile-header flex flex-col">
       {/* User Info Row */}
-      <div className="user bg-blue-500 p-2 flex flex-col gap-1">
+      <div className="user bg-blue-500 p-2 flex flex-col justify-center items-center gap-1">
         {/* <span className="comment-date text-md">{props.date}</span> */}
         {/* Avatar */}
         <div className="user-image">
           <img
             src={props.avatar}
             alt="User avatar"
-            className="lg:w-20 rounded-2xl"
+            className="rounded-2xl w-60"
           />
         </div>
 
         {/* Text Info */}
-        <div className="user-info flex items-center gap-2 flex-wrap max-w-sm bg-blue-500">
-          <h3 className="font-semibold font-marker text-xl text-center">
+        <div className="user-info bg-blue-500  flex flex-col gap-1 p-2">
+          <h3 className="font-semibold font-marker text-2xl text-center">
             {props.username}
           </h3>
           <Online />
           {isCurrentUser && (
-            <span className="current-user bg-blue-100 text-blue-600 text-2xl font-semibold px-2 py-1 rounded">
+            <span className="current-user max-w-sm bg-blue-100 text-blue-600 text-2xl font-semibold rounded">
               Reply Guy!
             </span>
           )}{" "}
-          <span className="comment-date text-black text-md">{props.date}</span>
+          {/* <span className="comment-date text-black text-md">{props.date}</span> */}
         </div>
       </div>
 

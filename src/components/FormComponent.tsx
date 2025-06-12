@@ -17,40 +17,42 @@ function FormComponent(props: {
 
   return (
     <div className="flex flex-col justify-center items-center w-full">
-      <div className="form-component max-w-3xl mt-4 mb-8 bg-blue-300 p-2 w-full">
-        <div className="flex gap-4 justify-center items-center">
-          <div className="current-user">
-            {/* <div className="user-img"> */}
-            {/* <img
+      <div className="form-component max-w-xs md:max-w-2xl mt-4 rounded-2xl mb-8 bg-blue-300 p-2">
+        <div className="current-user">
+          {/* <div className="user-img"> */}
+          {/* <img
               src={data.currentUser.image.png}
               alt=""
               className="w-20 rounded-2xl"
             /> */}
-            {/* </div> */}
-          </div>
-          <form
-            action="#"
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-2 justify-center items-center"
-          >
-            <h1 className="font-marker text-3xl">Leave a Comment:</h1>
-            <img
-              src={data.currentUser.image.png}
-              alt=""
-              className="w-20 rounded-2xl mx-auto"
-            />
-            <textarea
-              name="comment"
-              id="comment"
-              defaultValue={props.defaultValue}
-              placeholder="Add a comment..."
-              className="bg-white rounded text-2xl w-20 h-10 p-1 font-serif"
-            ></textarea>
-            <button className="font-marker ml-18 text-2xl w-20 hover:scale-105 transition-transform duration-300">
-              Send
-            </button>
-          </form>
+          {/* </div> */}
         </div>
+        <form
+          action="#"
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-2 justify-center items-center"
+        >
+          <h1 className="font-marker md:text-3xl">Leave a Comment:</h1>
+          <img
+            src={data.currentUser.image.png}
+            alt=""
+            className="w-14 rounded-2xl"
+          />
+          <textarea
+            name="comment"
+            id="comment"
+            defaultValue={props.defaultValue}
+            placeholder="Add a comment..."
+            className="bg-white outline-purple-700 font-mono rounded text-2xl w-full h-10 p-1"
+          />
+
+          <button
+            type="submit"
+            className="font-marker text-purple-800 text-2xl underline rounded hover:scale-105 transition-all duration-300 transform ease-out  "
+          >
+            Send
+          </button>
+        </form>
       </div>
     </div>
   );

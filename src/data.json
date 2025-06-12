@@ -1,7 +1,7 @@
 {
   "currentUser": {
     "image": {
-      "png": "/images/avatars/kelly-sikkema.jpg",
+      "png": "/images/avatars/pexels-mikhail.jpg",
       "webp": "/images/avatars/image-juliusomo.webp"
     },
     "username": "juliusomo"
@@ -14,10 +14,10 @@
       "score": 12,
       "user": {
         "image": {
-          "png": "/images/avatars/medelwaid.jpg",
+          "png": "/images/avatars/pexels-ana.jpg",
           "webp": "/images/avatars/image-amyrobson.webp"
         },
-        "username": "Joe Castro"
+        "username": "Drake Garcia"
       },
       "replies": []
     },
@@ -28,10 +28,10 @@
       "score": 5,
       "user": {
         "image": {
-          "png": "/images/avatars/ashley-nicole2.jpg",
+          "png": "/images/avatars/pexels-farshad.jpg",
           "webp": "/images/avatars/image-maxblagun.webp"
         },
-        "username": "Drake Dragon"
+        "username": "Madison Rae"
       },
       "replies": [
         {

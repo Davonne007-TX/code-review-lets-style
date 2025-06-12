@@ -5,7 +5,7 @@ function Button(props: {
   clickHandler: React.MouseEventHandler;
 }) {
   return (
-    <button onClick={props.clickHandler} className=" p-1">
+    <button onClick={props.clickHandler} className=" p-1 absolute top-34">
       <div className="icon-img">
         <img src={props.iconImage} alt="w-80" />
       </div>
