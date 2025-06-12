@@ -1,4 +1,6 @@
 import * as React from "react";
+
+import Header from "./components/subcomponents/Header";
 import CommentsList from "./components/CommentsList";
 import FormComponent from "./components/FormComponent";
 import TopSection from "./components/subcomponents/TopSection";
@@ -139,26 +141,29 @@ function App() {
   }, data.comments);
 
   return (
-    <div className="">
-      <CommentStateContext.Provider
-        value={{
-          comments,
-          dispatch,
-        }}
-      >
-        <TopSection />
-        <CommentsList />
+    <>
+      <div className="">
+        <CommentStateContext.Provider
+          value={{
+            comments,
+            dispatch,
+          }}
+        >
+          <Header />
+          <TopSection />
+          <CommentsList />
 
-        <FormComponent
-          dispatchHandler={(content: string) =>
-            dispatch({
-              type: "ADD_COMMENT",
-              payload: content,
-            })
-          }
-        />
-      </CommentStateContext.Provider>
-    </div>
+          <FormComponent
+            dispatchHandler={(content: string) =>
+              dispatch({
+                type: "ADD_COMMENT",
+                payload: content,
+              })
+            }
+          />
+        </CommentStateContext.Provider>
+      </div>
+    </>
   );
 }
 
