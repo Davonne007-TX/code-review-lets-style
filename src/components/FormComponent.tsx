@@ -36,7 +36,7 @@ function FormComponent(props: {
           <img
             src={data.currentUser.image.png}
             alt=""
-            className="w-14 rounded-2xl"
+            className="w-10 rounded-2xl"
           />
           <textarea
             name="comment"
