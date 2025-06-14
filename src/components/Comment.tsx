@@ -7,9 +7,11 @@ function Comment(props: { comment: UserComment }) {
   return (
     <div className="comment-wrapper font-thin font-serif text-xl">
       <Card item={props.comment}>
-        <div className="bg-blue-300">
-          <div className="w-full p-1 flex flex-col gap-2">
-            <p className="comment-date text-md">{props.comment.createdAt}</p>
+        <div className="bg-blue-300 text-xl">
+          <div className="w-full p-1 flex flex-col gap-2 font-mono">
+            <p className="comment-date font-bold text-md">
+              {props.comment.createdAt}
+            </p>
             <p>{props.comment.content}</p>
             <ScoreComponent score={props.comment.score} />
           </div>

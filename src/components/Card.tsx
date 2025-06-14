@@ -78,14 +78,14 @@ function Card(props: {
         <div className="content flex flex-col md:flex-row gap-4 justify-center items-center">
           <div className="profile-header">
             <div className="user flex flex-col">
-              <div className="user-img bg-blue-500 text-center">
+              <div className="user-img bg-blue-500 text-center h-20">
                 <img
                   src={props.item.user.image.jpg}
                   alt="avatar"
-                  className="w-20 p-2"
+                  className="w-14 p-2"
                 />
 
-                <h3 className="font-marker text-3xl mt-2">
+                <h3 className="font-marker text-4xl">
                   {props.item.user.username}
                 </h3>
                 <Online />
