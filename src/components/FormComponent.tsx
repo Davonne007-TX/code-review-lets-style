@@ -34,7 +34,7 @@ function FormComponent(props: {
         >
           <h1 className="font-marker md:text-3xl">Leave a Comment:</h1>
           <img
-            src={data.currentUser.image.png}
+            src={data.currentUser.image.jpg}
             alt=""
             className="w-14 rounded-2xl"
           />

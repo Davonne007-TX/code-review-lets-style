@@ -50,8 +50,7 @@ export const createProps = (info: {
 
 const dispatch: React.ActionDispatch<[action: ReducerActions]> = () => {};
 
-// Make a recursive function that loops over the comments/arrays to find the one with the highest ID.
-
+// Utility to find the highest ID in comments and replies
 const getLastId = (comments: UserComment[]) =>
   Math.max.apply(null, [
     ...comments.map((it) => it.id),
@@ -75,7 +74,6 @@ function App() {
             ...item,
             content: action.payload,
           };
-
         return item;
       });
 
@@ -91,7 +89,7 @@ function App() {
             score: 0,
             content: action.payload,
             replies: [],
-            createdAt: "now",
+            createdAt: Date(),
             user: currentUser,
           },
         ];
@@ -124,8 +122,7 @@ function App() {
       case "EDIT":
         if (parentComment) {
           return state.map((comment) => {
-            if (!(parentComment.id == comment.id)) return comment;
-
+            if (parentComment.id !== comment.id) return comment;
             return {
               ...comment,
               replies: editComment(comment.replies),
@@ -134,6 +131,17 @@ function App() {
         }
 
         return editComment(state);
+
+      case "DELETE":
+        // Try deleting as a top-level comment
+        const newState = state.filter((comment) => comment.id !== action.id);
+        if (newState.length !== state.length) return newState;
+
+        // Else, try deleting from replies
+        return state.map((comment) => ({
+          ...comment,
+          replies: comment.replies.filter((reply) => reply.id !== action.id),
+        }));
 
       default:
         return state;
@@ -152,12 +160,12 @@ function App() {
           <Header />
           <TopSection />
           <CommentsList />
-
           <FormComponent
             dispatchHandler={(content: string) =>
               dispatch({
                 type: "ADD_COMMENT",
                 payload: content,
+                id: 0,
               })
             }
           />

@@ -1,12 +1,14 @@
 import * as React from "react";
 
-import ProfileHeader from "./subcomponents/ProfileHeader";
+// import ProfileHeader from "./subcomponents/ProfileHeader";
 import FormComponent from "./FormComponent";
 // import ScoreComponent from "./subcomponents/ScoreComponent";
 import Button from "./subcomponents/Button";
 import { CommentStateContext, currentUser, createProps } from "../App";
 
 import type { UserComment, UserReply } from "../App";
+// import { useSearchParams } from "react-router-dom";
+import Online from "./subcomponents/Online";
 
 const CurrentUserActions = (props: {
   handleEditClick: React.MouseEventHandler;
@@ -30,37 +32,96 @@ const CurrentUserActions = (props: {
 function Card(props: {
   item: UserComment | UserReply;
   children: React.ReactNode;
+  avatar: string;
 }) {
   const [isReplying, setIsReplying] = React.useState(false);
   const [isEditting, setIsEditting] = React.useState(false);
+  const [isHidden, setIsHidden] = React.useState(true);
   const { dispatch } = React.useContext(CommentStateContext);
 
-  const isCurrentUser = currentUser.username == props.item.user.username;
+  const isCurrentUser = currentUser.username === props.item.user.username;
 
   return (
     <div className="container outline-2 outline-white">
       <div className="card">
-        <div className="content flex flex-col md:flex-row gap-2 bg-blue-500">
-          <ProfileHeader {...createProps(props.item)}>
-            {/* <ScoreComponent score={props.item.score} /> */}
-            {!isCurrentUser && (
-              <Button
-                clickHandler={(e) => setIsReplying((prev) => !prev)}
-                iconImage="/images/icon-reply.svg"
-                label="Reply"
+        <div className="content flex flex-col md:flex-row">
+          <button
+            onClick={() =>
+              dispatch({
+                type: "UP_VOTE",
+                id: props.item.id,
+              })
+            }
+          >
+            <div className="icon-img">
+              <img
+                src="/interactive-comment-section/images/icon-plus.svg"
+                alt=""
               />
-            )}
+            </div>
+          </button>
 
-            {isCurrentUser && (
-              <CurrentUserActions
-                handleEditClick={(e) => setIsEditting((prev) => !prev)}
-                handleDeleteClick={(e) =>
-                  console.log("This triggers the delete modal.")
-                }
+          {/* <span>{props.item.score}</span> */}
+
+          <button
+            onClick={() =>
+              dispatch({
+                type: "DOWN_VOTE",
+                id: props.item.id,
+              })
+            }
+          >
+            <div className="icon-img">
+              <img
+                src="/interactive-comment-section/images/icon-minus.svg"
+                alt=""
               />
-            )}
-          </ProfileHeader>
-          {/* <ScoreComponent score={props.item.score} /> */}
+            </div>
+          </button>
+        </div>
+
+        <div className="content flex flex-col md:flex-row gap-4 justify-center items-center">
+          <div className="profile-header">
+            <div className="user flex flex-col">
+              <div className="user-img bg-blue-500 text-center">
+                <img
+                  src={props.item.user.image.jpg}
+                  alt="avatar"
+                  className="w-20 p-2"
+                />
+
+                <h3 className="font-marker text-3xl mt-2">
+                  {props.item.user.username}
+                </h3>
+                <Online />
+
+                {isCurrentUser && (
+                  <span className="current-use font-marker">Reply Guy!</span>
+                )}
+
+                {/* <span className="comment-date">{props.item.createdAt}</span> */}
+              </div>
+            </div>
+
+            <div className="actions bg-blue-500 p-4">
+              {isCurrentUser ? (
+                <CurrentUserActions
+                  handleEditClick={() => setIsEditting((prev) => !prev)}
+                  handleDeleteClick={() => setIsHidden(false)}
+                />
+              ) : (
+                <button
+                  onClick={() => setIsReplying((prev) => !prev)}
+                  className="font-mono text-xl text-purple-700 font-bold"
+                >
+                  <div className="icon-img">
+                    {/* <img src="/images/icon-reply.svg" alt="" /> */}
+                  </div>
+                  Reply ↩️
+                </button>
+              )}
+            </div>
+          </div>
 
           {props.children}
         </div>
@@ -68,6 +129,7 @@ function Card(props: {
 
       {isReplying && (
         <FormComponent
+          placeholderValue="Add a reply..."
           dispatchHandler={(content: string) => {
             dispatch({
               type: "ADD_REPLY",
@@ -82,7 +144,8 @@ function Card(props: {
 
       {isEditting && (
         <FormComponent
-          defaultValue={props.item.content}
+          placeholderValue="Edit a comment..."
+          value={props.item.content}
           dispatchHandler={(content: string) => {
             dispatch({
               type: "EDIT",
@@ -93,6 +156,31 @@ function Card(props: {
             setIsEditting(false);
           }}
         />
+      )}
+
+      {!isHidden && (
+        <div className="modal-container text-2xl">
+          <h3 className="font-marker">Delete comment</h3>
+          <p>
+            Are you sure you want to delete this comment? This will remove the
+            comment and can't be undone.
+          </p>
+
+          <div className="buttons flex gap-2 bg-blue-500 font-marker">
+            <button
+              className="cance font-marker"
+              onClick={() => setIsHidden(true)}
+            >
+              No, Cancel
+            </button>
+            <button
+              className="confirm"
+              onClick={() => dispatch({ type: "DELETE", id: props.item.id })}
+            >
+              Yes, Confirm
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

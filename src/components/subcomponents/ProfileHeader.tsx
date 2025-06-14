@@ -19,7 +19,7 @@ function ProfileHeader(props: {
           <img
             src={props.avatar}
             alt="User avatar"
-            className="rounded-2xl w-60"
+            className="rounded-2xl w-40"
           />
         </div>
 
@@ -45,6 +45,3 @@ function ProfileHeader(props: {
 }
 
 export default ProfileHeader;
-
-//the images are not aligning when you leave a comment. The images
-//line 22 is the situation

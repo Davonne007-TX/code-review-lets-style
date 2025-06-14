@@ -1,7 +1,7 @@
 {
   "currentUser": {
     "image": {
-      "png": "/images/avatars/pexels-mikhail.jpg",
+      "jpg": "/images/avatars/pexels-mikhail.jpg",
       "webp": "/images/avatars/image-juliusomo.webp"
     },
     "username": "juliusomo"
@@ -14,7 +14,7 @@
       "score": 12,
       "user": {
         "image": {
-          "png": "/images/avatars/pexels-ana.jpg",
+          "jpg": "/images/avatars/pexels-ana.jpg",
           "webp": "/images/avatars/image-amyrobson.webp"
         },
         "username": "Drake Garcia"
@@ -28,10 +28,10 @@
       "score": 5,
       "user": {
         "image": {
-          "png": "/images/avatars/pexels-farshad.jpg",
+          "jpg": "/images/avatars/michael-dam.jpg",
           "webp": "/images/avatars/image-maxblagun.webp"
         },
-        "username": "Madison Rae"
+        "username": "Madison Ranger"
       },
       "replies": [
         {
@@ -42,7 +42,7 @@
           "replyingTo": "maxblagun",
           "user": {
             "image": {
-              "png": "/images/avatars/lance-reis.jpg",
+              "jpg": "/images/avatars/lance-reis.jpg",
               "webp": "/images/avatars/image-ramsesmiron.webp"
             },
             "username": "Lance Strong"
@@ -56,10 +56,10 @@
           "replyingTo": "ramsesmiron",
           "user": {
             "image": {
-              "png": "/images/avatars/petr-sevcovic.jpg",
+              "jpg": "/images/avatars/petr-sevcovic.jpg",
               "webp": "/images/avatars/image-juliusomo.webp"
             },
-            "username": "Julian Monroe"
+            "username": "Julian Roe"
           }
         }
       ]
