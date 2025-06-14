@@ -5,17 +5,15 @@ function Button(props: {
   clickHandler: React.MouseEventHandler;
 }) {
   return (
-    <div className="">
-      <button
-        onClick={props.clickHandler}
-        className="font-mono hover:underline"
-      >
-        <div className="icon-img ">
-          <img src={props.iconImage} alt="w-80" />
-        </div>
-        {props.label}
-      </button>
-    </div>
+    <button
+      onClick={props.clickHandler}
+      className="font-mono hover:underline btn-styles"
+    >
+      <div className="icon-img ">
+        <img src={props.iconImage} alt="w-80" />
+      </div>
+      {props.label}
+    </button>
   );
 }
 

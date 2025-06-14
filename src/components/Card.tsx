@@ -10,17 +10,21 @@ const CurrentUserActions = (props: {
   handleDeleteClick: React.MouseEventHandler;
 }) => (
   <>
-    <Button
-      label="Edit"
-      iconImage="/images/icon-edit.svg"
-      clickHandler={props.handleEditClick}
-    />
-
-    <Button
-      label=" Delete"
-      iconImage="/images/icon-delete.svg"
-      clickHandler={props.handleDeleteClick}
-    />
+    <div className="mt-4">
+      <Button
+        label="Edit"
+        iconImage="/images/icon-edit.svg"
+        clickHandler={props.handleEditClick}
+      />
+      <div className="flex items-center">
+        <div>🗑️</div>
+        <Button
+          label="Delete"
+          iconImage="/images/icon-delete.svg" // ****
+          clickHandler={props.handleDeleteClick}
+        />
+      </div>
+    </div>
   </>
 );
 
@@ -37,7 +41,7 @@ function Card(props: {
   const isCurrentUser = currentUser.username === props.item.user.username;
 
   return (
-    <div className="container outline-2 outline-white">
+    <div className="container outline-2 outline-white transition-opacity duration-500 ease-in opacity-100">
       <div className="card">
         <div className="content flex flex-col md:flex-row">
           <button
@@ -85,7 +89,7 @@ function Card(props: {
                   className="w-14 p-2"
                 />
 
-                <h3 className="font-marker text-4xl">
+                <h3 className="font-marker text-2xl md:text-3xl">
                   {props.item.user.username}
                 </h3>
                 <Online />
@@ -161,15 +165,15 @@ function Card(props: {
             comment and can't be undone.
           </p>
 
-          <div className="buttons flex gap-2 font-marker">
+          <div className="buttons flex gap-2">
             <button
-              className="cance font-marker hover:underline"
+              className="cancel confirm-bts"
               onClick={() => setIsHidden(true)}
             >
               No, Cancel
             </button>
             <button
-              className="confirm hover:underline"
+              className="confirm confirm-bts"
               onClick={() => dispatch({ type: "DELETE", id: props.item.id })}
             >
               Yes, Confirm

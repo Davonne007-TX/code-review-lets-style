@@ -46,10 +46,7 @@ function FormComponent(props: {
             className="bg-white outline-purple-700 font-mono rounded text-2xl w-full h-10 p-1"
           />
 
-          <button
-            type="submit"
-            className="font-marker text-purple-800 text-2xl underline rounded hover:scale-105 transition-all duration-300 transform ease-out  "
-          >
+          <button type="submit" className="confirm-bts text-2xl rounded ">
             Send
           </button>
         </form>

@@ -36,12 +36,15 @@ body {
 }
 
 button {
-  background-color: transparent;
   border: none;
   display: inline-flex;
   gap: 0.5em;
   /* font: inherit; */
   cursor: pointer;
+}
+
+.confirm-bts {
+  @apply bg-purple-600 text-white p-0.5 font-marker hover:scale-105 transition-all duration-300 transform ease-out;
 }
 
 /* Comment Component */
