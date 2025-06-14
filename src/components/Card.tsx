@@ -1,13 +1,8 @@
 import * as React from "react";
 
-// import ProfileHeader from "./subcomponents/ProfileHeader";
-import FormComponent from "./FormComponent";
-// import ScoreComponent from "./subcomponents/ScoreComponent";
 import Button from "./subcomponents/Button";
-import { CommentStateContext, currentUser, createProps } from "../App";
-
+import { CommentStateContext, currentUser } from "../App";
 import type { UserComment, UserReply } from "../App";
-// import { useSearchParams } from "react-router-dom";
 import Online from "./subcomponents/Online";
 
 const CurrentUserActions = (props: {
@@ -22,7 +17,7 @@ const CurrentUserActions = (props: {
     />
 
     <Button
-      label="Delete"
+      label=" Delete"
       iconImage="/images/icon-delete.svg"
       clickHandler={props.handleDeleteClick}
     />
@@ -112,7 +107,7 @@ function Card(props: {
               ) : (
                 <button
                   onClick={() => setIsReplying((prev) => !prev)}
-                  className="font-mono text-xl text-purple-700 font-bold"
+                  className="font-mono text-xl hover:scale-105 text-purple-700 font-bold"
                 >
                   <div className="icon-img">
                     {/* <img src="/images/icon-reply.svg" alt="" /> */}
@@ -159,22 +154,22 @@ function Card(props: {
       )}
 
       {!isHidden && (
-        <div className="modal-container text-2xl">
+        <div className="modal-container text-2xl flex flex-col gap-2 p-2">
           <h3 className="font-marker">Delete comment</h3>
           <p>
             Are you sure you want to delete this comment? This will remove the
             comment and can't be undone.
           </p>
 
-          <div className="buttons flex gap-2 bg-blue-500 font-marker">
+          <div className="buttons flex gap-2 font-marker">
             <button
-              className="cance font-marker"
+              className="cance font-marker hover:underline"
               onClick={() => setIsHidden(true)}
             >
               No, Cancel
             </button>
             <button
-              className="confirm"
+              className="confirm hover:underline"
               onClick={() => dispatch({ type: "DELETE", id: props.item.id })}
             >
               Yes, Confirm

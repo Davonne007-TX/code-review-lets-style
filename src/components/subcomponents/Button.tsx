@@ -5,9 +5,12 @@ function Button(props: {
   clickHandler: React.MouseEventHandler;
 }) {
   return (
-    <div className="flex gap-2">
-      <button onClick={props.clickHandler} className="font-mono">
-        <div className="icon-img">
+    <div className="">
+      <button
+        onClick={props.clickHandler}
+        className="font-mono hover:underline"
+      >
+        <div className="icon-img ">
           <img src={props.iconImage} alt="w-80" />
         </div>
         {props.label}
