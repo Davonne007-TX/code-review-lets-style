@@ -12,19 +12,15 @@ function ProfileHeader(props: {
   return (
     <div className="profile-header flex flex-col">
       {/* User Info Row */}
-      <div className="user bg-blue-500 p-2 flex flex-col justify-center items-center">
+      <div className="user bg-blue-500 flex flex-col justify-center items-center">
         {/* <span className="comment-date text-md">{props.date}</span> */}
         {/* Avatar */}
         <div className="user-image">
-          <img
-            src={props.avatar}
-            alt="User avatar"
-            className="rounded-2xl w-40"
-          />
+          <img src={props.avatar} alt="User avatar" className="w-24" />
         </div>
 
         {/* Text Info */}
-        <div className="user-info flex flex-col gap-1 p-2">
+        <div className="user-info flex flex-col gap-1">
           <h3 className="font-semibold font-marker text-2xl text-center">
             {props.username}
           </h3>
