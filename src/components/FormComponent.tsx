@@ -2,7 +2,9 @@ import data from "../data.json";
 
 function FormComponent(props: {
   defaultValue?: string;
-  dispatchHandler: Function;
+  value?: string;
+  onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
+  dispatchHandler: (content: string) => void;
 }) {
   const handleSubmit: React.FormEventHandler = (e) => {
     e.preventDefault();
@@ -42,7 +44,8 @@ function FormComponent(props: {
             name="comment"
             id="comment"
             defaultValue={props.defaultValue}
-            placeholder="Add a comment..."
+            value={props.value}
+            onChange={props.onChange}
             className="bg-white outline-purple-700 font-mono rounded text-2xl w-full h-10 p-1"
           />
 
