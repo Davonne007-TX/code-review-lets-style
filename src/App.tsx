@@ -15,8 +15,8 @@ export type UserComment = {
   user: {
     username: string;
     image: {
-      png: string;
-      webp: string;
+      jpg: string;
+      // webp: string;
     };
   };
   replies: UserReply[];

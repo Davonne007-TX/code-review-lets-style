@@ -1,8 +1,7 @@
 {
   "currentUser": {
     "image": {
-      "jpg": "/images/avatars/pexels-mikhail.jpg",
-      "webp": "/images/avatars/image-juliusomo.webp"
+      "jpg": "/images/avatars/pexels-mikhail.jpg"
     },
     "username": "juliusomo"
   },
@@ -14,8 +13,7 @@
       "score": 12,
       "user": {
         "image": {
-          "jpg": "/images/avatars/pexels-ana.jpg",
-          "webp": "/images/avatars/image-amyrobson.webp"
+          "jpg": "/images/avatars/pexels-ana.jpg"
         },
         "username": "Miranda Sanchez"
       },
@@ -28,8 +26,7 @@
       "score": 5,
       "user": {
         "image": {
-          "jpg": "/images/avatars/michael-dam.jpg",
-          "webp": "/images/avatars/image-maxblagun.webp"
+          "jpg": "/images/avatars/michael-dam.jpg"
         },
         "username": "Lizzie Gordo"
       },
@@ -37,13 +34,12 @@
         {
           "id": 3,
           "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
-          "createdAt": "06/02/2025 at 5:55pm ",
+          "createdAt": "06/02/2025 at 5:55pm",
           "score": 4,
           "replyingTo": "maxblagun",
           "user": {
             "image": {
-              "jpg": "/images/avatars/lance-reis.jpg",
-              "webp": "/images/avatars/image-ramsesmiron.webp"
+              "jpg": "/images/avatars/lance-reis.jpg"
             },
             "username": "Ethan Strong"
           }
@@ -56,8 +52,7 @@
           "replyingTo": "ramsesmiron",
           "user": {
             "image": {
-              "jpg": "/images/avatars/petr-sevcovic.jpg",
-              "webp": "/images/avatars/image-juliusomo.webp"
+              "jpg": "/images/avatars/petr-sevcovic.jpg"
             },
             "username": "Matt Roe"
           }
