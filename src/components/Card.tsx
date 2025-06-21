@@ -11,7 +11,7 @@ const CurrentUserActions = (props: {
   handleDeleteClick: React.MouseEventHandler;
 }) => (
   <>
-    <div className="mt-4">
+    <div className="mt-2">
       <Button
         label="Edit"
         iconImage="/images/icon-edit.svg"
