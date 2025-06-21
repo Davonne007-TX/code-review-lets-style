@@ -37,13 +37,13 @@ export const currentUser = data.currentUser;
 export const createProps = (info: {
   user: {
     image: {
-      png: string;
+      jpg: string;
     };
     username: string;
   };
   createdAt: string;
 }) => ({
-  avatar: info.user.image.png,
+  avatar: info.user.image.jpg,
   username: info.user.username,
   date: info.createdAt,
 });
