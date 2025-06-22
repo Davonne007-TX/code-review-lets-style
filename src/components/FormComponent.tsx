@@ -20,15 +20,6 @@ function FormComponent(props: {
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <div className="form-component max-w-xs md:max-w-2xl mt-4 rounded-2xl mb-8 bg-blue-300 p-2">
-        <div className="current-user">
-          {/* <div className="user-img"> */}
-          {/* <img
-              src={data.currentUser.image.png}
-              alt=""
-              className="w-20 rounded-2xl"
-            /> */}
-          {/* </div> */}
-        </div>
         <form
           action="#"
           onSubmit={handleSubmit}
@@ -37,12 +28,13 @@ function FormComponent(props: {
           <h1 className="font-marker md:text-3xl">Leave a Comment:</h1>
           <img
             src={data.currentUser.image.jpg}
-            alt=""
+            alt="Our Space User"
             className="w-14 rounded-2xl"
           />
           <textarea
             name="comment"
             id="comment"
+            placeholder="Your thoughts..."
             defaultValue={props.defaultValue}
             value={props.value}
             onChange={props.onChange}
