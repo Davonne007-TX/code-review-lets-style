@@ -5,6 +5,7 @@ function FormComponent(props: {
   value?: string;
   placeholderValue: string;
   dispatchHandler: (comment: string) => void;
+  onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
 }) {
   const textAreaRef = React.createRef<HTMLTextAreaElement>();
 
