@@ -6,7 +6,7 @@ import type { UserComment } from "../App";
 function Comment(props: { comment: UserComment }) {
   return (
     <div className="comment-wrapper font-thin font-serif text-xl">
-      <Card item={props.comment} avatar={props.comment.avatar}>
+      <Card item={props.comment} avatar={props.comment.user.image.jpg}>
         {" "}
         <div className="bg-blue-300 text-xl">
           <div className="w-full p-1 flex flex-col gap-2 font-mono">
