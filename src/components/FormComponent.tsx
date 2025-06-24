@@ -51,7 +51,6 @@ function FormComponent(props: {
             name="comment"
             id="comment"
             defaultValue={props.value}
-            placeholder={props.placeholderValue}
             ref={textAreaRef}
             className="bg-white text-black outline-purple-700 font-mono rounded text-2xl w-full h-10 p-1"
           />
