@@ -1,11 +1,13 @@
+import * as React from "react";
 import data from "../data.json";
 
 function FormComponent(props: {
-  defaultValue?: string;
   value?: string;
-  onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
-  dispatchHandler: (content: string) => void;
+  placeholderValue: string;
+  dispatchHandler: (comment: string) => void;
 }) {
+  const textAreaRef = React.createRef<HTMLTextAreaElement>();
+
   const handleSubmit: React.FormEventHandler = (e) => {
     e.preventDefault();
 
@@ -16,6 +18,11 @@ function FormComponent(props: {
 
     formElement.reset();
   };
+
+  React.useEffect(() => {
+    const textAreaElement = textAreaRef.current;
+    textAreaElement?.focus();
+  }, []);
 
   return (
     <div className="flex flex-col justify-center items-center w-full">
@@ -31,14 +38,22 @@ function FormComponent(props: {
             alt="Our Space User"
             className="w-14 rounded-2xl"
           />
+          {/* <textarea
+            name="comment"
+            id="comment"
+            value={props.value}
+            onChange={props.onChange}
+            placeholder={props.defaultValue} // <-- This shows the hint text!
+            className="bg-white text-black outline-purple-700 font-mono rounded text-2xl w-full h-10 p-1"
+          /> */}
+
           <textarea
             name="comment"
             id="comment"
-            placeholder="Your thoughts..."
-            defaultValue={props.defaultValue}
-            value={props.value}
-            onChange={props.onChange}
-            className="bg-white outline-purple-700 font-mono rounded text-2xl w-full h-10 p-1"
+            defaultValue={props.value}
+            placeholder={props.placeholderValue}
+            ref={textAreaRef}
+            className="bg-white text-black outline-purple-700 font-mono rounded text-2xl w-full h-10 p-1"
           />
 
           <button type="submit" className="confirm-bts text-2xl rounded ">
