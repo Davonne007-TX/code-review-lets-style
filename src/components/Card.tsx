@@ -146,7 +146,6 @@ function Card(props: {
         <FormComponent
           placeholderValue="Edit a comment..."
           value={props.item.content}
-          onChange={(e) => setIsEditting(e.target.value)}
           dispatchHandler={(content: string) => {
             dispatch({
               type: "EDIT",
