@@ -161,6 +161,7 @@ function App() {
           <TopSection />
           <CommentsList />
           <FormComponent
+            placeholderValue="Add a comment..!"
             dispatchHandler={(content: string) =>
               dispatch({
                 type: "ADD_COMMENT",
