@@ -20,10 +20,10 @@ function FormComponent(props: {
     formElement.reset();
   };
 
-  React.useEffect(() => {
-    const textAreaElement = textAreaRef.current;
-    textAreaElement?.focus();
-  }, []);
+  // React.useEffect(() => {
+  //   const textAreaElement = textAreaRef.current;
+  //   textAreaElement?.focus();
+  // }, []);
 
   return (
     <div className="flex flex-col justify-center items-center w-full">

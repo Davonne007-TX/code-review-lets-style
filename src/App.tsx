@@ -160,6 +160,7 @@ function App() {
           <Header />
           <TopSection />
           <CommentsList />
+
           <FormComponent
             placeholderValue="Add a comment..!"
             dispatchHandler={(content: string) =>
