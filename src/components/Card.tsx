@@ -129,7 +129,7 @@ function Card(props: {
 
       {isReplying && (
         <FormComponent
-          defaultValue="Add a reply..."
+          placeholderValue="Add a reply..."
           dispatchHandler={(content: string) => {
             dispatch({
               type: "ADD_REPLY",
@@ -144,8 +144,9 @@ function Card(props: {
 
       {isEditting && (
         <FormComponent
-          defaultValue="Edit a comment..."
+          placeholderValue="Edit a comment..."
           value={props.item.content}
+          onChange={(e) => setIsEditting(e.target.value)}
           dispatchHandler={(content: string) => {
             dispatch({
               type: "EDIT",
