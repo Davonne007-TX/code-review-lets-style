@@ -1,15 +1,21 @@
-function ScoreComponent(props: { score: number }) {
+type ScoreComponent = {
+  score: number;
+  onUpvote: () => void;
+  onDownvote: () => void;
+};
+
+function ScoreComponent({ score, onUpvote, onDownvote }: ScoreComponentProps) {
   return (
     <div className="score-component flex gap-1">
-      <button>
+      <button onClick={onUpvote}>
         <div className="icon-img">
           <p>➕</p>
         </div>
       </button>
 
-      <span>{props.score}</span>
+      <span>{score}</span>
 
-      <button>
+      <button onClick={onDownvote}>
         <div className="icon-img">
           <p>➖</p>
         </div>
