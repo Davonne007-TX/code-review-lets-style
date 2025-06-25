@@ -1,4 +1,4 @@
-type ScoreComponent = {
+type ScoreComponentProps = {
   score: number;
   onUpvote: () => void;
   onDownvote: () => void;
@@ -9,7 +9,7 @@ function ScoreComponent({ score, onUpvote, onDownvote }: ScoreComponentProps) {
     <div className="score-component flex gap-1">
       <button onClick={onUpvote}>
         <div className="icon-img">
-          <p>++</p>
+          <p>+</p>
         </div>
       </button>
 
