@@ -4,7 +4,7 @@
 
 When two devs Hamdi Kamel and myself Davonne Vigil get togehter and collaberate. Taking Hamdi's code, reviewing it, reading it, understanding what he did, breaking it, and turned it into something totally new when it comes to the UI.
 
-#Goal 🎯
+# Goal 🎯
 
 - My goal out of this code review was to go in blindly and see what I can understand, see what I know, and testing my skills. Especailly when it comes to TypeScript.
 
